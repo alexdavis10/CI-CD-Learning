@@ -15,7 +15,7 @@ jobs:
     strategy:
       # Define a matrix to run the job for each report
       matrix:
-        report: [Report1, Report2] # Add or remove reports as needed
+        report: [Report1, Report2, Report3, Report4, Report5] # Add or remove reports as needed
     steps:
       # Step to print the currently selected report
       - name: Print selected report
