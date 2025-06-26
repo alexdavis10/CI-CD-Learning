@@ -1,0 +1,24 @@
+
+# This workflow demonstrates running a job for each selected report using a matrix strategy.
+name: Report Matrix Example
+
+
+# Trigger this workflow manually from the GitHub Actions UI
+on:
+  workflow_dispatch:
+
+
+jobs:
+  report-job:
+    # Use the latest Windows runner
+    runs-on: windows-latest
+    strategy:
+      # Define a matrix to run the job for each report
+      matrix:
+        report: [Report1, Report2] # Add or remove reports as needed
+    steps:
+      # Step to print the currently selected report
+      - name: Print selected report
+        shell: pwsh
+        run: |
+          Write-Host "Selected Report - ${{ matrix.report }}"
